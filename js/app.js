@@ -51,11 +51,11 @@ function init() {
 
   //   ? audio
   let eatFoodSound = new Audio("blip.wav");
-  eatFoodSound.volume = 0.09
-  let gameLoopSound = new Audio("gameLoop.wav")
-  gameLoopSound.volume = 0.03
-  let gameOverSound = new Audio("gameover.wav")
-  let winnerSound = new Audio("winner.wav")
+  eatFoodSound.volume = 0.09;
+  let gameLoopSound = new Audio("gameLoop.wav");
+  gameLoopSound.volume = 0.03;
+  let gameOverSound = new Audio("gameover.wav");
+  let winnerSound = new Audio("winner.wav");
 
   // ? Functions
   function createGrid() {
@@ -81,16 +81,11 @@ function init() {
       }
     }
     addPacMan();
-    // addGhost(blinkyCurrPos, 'blinky')
-    // addGhost(pinkyCurrPos, 'pinky')
-    // addGhost(inkyCurrPos, 'inky')
-    // addGhost(clydeCurrPos, 'clyde')
     ghosts.forEach((ghost) => {
       cells[ghost.ghostCurrPosition].classList.add(ghost.className);
       cells[ghost.ghostCurrPosition].classList.add("ghost");
       moveGhost(ghost);
     });
-    //   ghosts.forEach((ghost) => moveGhost(ghost));
   }
 
   function addPacMan() {
@@ -101,10 +96,6 @@ function init() {
     cells[pacManCurrPosition].classList.remove("pacMan");
   }
 
-  //   function addGhost(position, className) {
-  //     cells[position].classList.add(className)
-  //   }
-
   function movePacMan() {
     clearInterval(pacManInterval);
     pacManInterval = setInterval(() => {
@@ -112,7 +103,7 @@ function init() {
         !cells[pacManCurrPosition + direction].classList.contains("wall") &&
         !cells[pacManCurrPosition + direction].classList.contains("ghostHouse")
       ) {
-        gameLoopSound.play()
+        gameLoopSound.play();
         gameLoopSound.loop = true;
         removePacMan();
         pacManCurrPosition += direction;
@@ -173,8 +164,8 @@ function init() {
 
   function eatPacDot() {
     if (cells[pacManCurrPosition].classList.contains("dot")) {
-        eatFoodSound.play();
-        removeFood("dot");
+      eatFoodSound.play();
+      removeFood("dot");
       score += 100;
     }
     currScore.innerHTML = score;
@@ -271,8 +262,8 @@ function init() {
       cells[pacManCurrPosition].classList.contains("ghost") &&
       !cells[pacManCurrPosition].classList.contains("scaredGhost")
     ) {
-        gameLoopSound.pause()
-    gameOverSound.play()
+      gameLoopSound.pause();
+      gameOverSound.play();
       clearInterval(pacManInterval);
       isGameOver = true;
       document.removeEventListener("keydown", handleMove);
@@ -297,8 +288,8 @@ function init() {
     const dots = document.querySelectorAll(".dot");
     const pills = document.querySelectorAll(".pill");
     if (dots.length === 0 && pills.length === 0) {
-        gameLoopSound.pause()
-    winnerSound.play()
+      gameLoopSound.pause();
+      winnerSound.play();
       winnerText.classList.add("open");
       document.removeEventListener("keydown", handleMove);
       ghosts.forEach((ghost) => clearInterval(ghost.timerId));
