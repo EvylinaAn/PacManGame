@@ -1,0 +1,288 @@
+/* .pill::before {
+    content: "";
+    display: block;
+    width: 45%;
+    height: 45%;
+    border-radius: 50%;
+    background-color: yellow;
+    opacity: 0.7;
+    margin: 25% auto;
+    box-sizing: border-box; 
+} */
+
+/* .pacMan {
+    background-image: url(../assets/pacman.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    padding: 5px;
+    margin: auto;
+} */
+
+
+
+/* .blinky::before {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background-color: red;
+    opacity: 0.7;
+    margin: 4% auto;
+}
+
+.pinky::before {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background-color: pink;
+    opacity: 0.7;
+    margin: 4% auto;
+}
+
+.inky::before {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background-color: blue;
+    opacity: 0.7;
+    margin: 4% auto;
+}
+
+.clyde::before {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background-color: green;
+    opacity: 0.7;
+    margin: 4% auto;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(74, 65, 65);
+  color: white;
+  margin:0;
+}
+
+.mainContainer {
+  height: 100vh;
+  width: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+aside {
+  margin-bottom: 5vmin;
+  margin-left: 5vmin;
+}
+
+h1 {
+  font-family: "Rubik Doodle Shadow", "Courier New", Courier, monospace;
+  font-size: 40px;
+}
+
+.scores {
+    padding: 40px 0;
+}
+
+#currentScore {
+}
+
+#highScore {
+}
+
+.scores p {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.gameGrid {
+  width: 700px;
+  height: 600px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#resetBTN {
+  padding: 1.5vmin;
+  border-radius: 1vmin;
+  border: none;
+  background-color: gray;
+  cursor: pointer;
+  font-size: 2vmin;
+  transition: all 0.3s ease-in;
+  grid-area: button;
+}
+
+#resetBTN:hover {
+  background-color: white;
+  color: gray;
+}
+
+.gameGrid > div {
+  border-radius: 10%;
+  flex-grow: 1;
+  height: 20%;
+  font-size: 12px;
+  width: 20%;
+}
+
+.wall {
+  border: 1px solid rgb(45, 40, 40);
+  background-color: rgb(175, 113, 175);
+}
+
+.dot::before {
+    content: "";
+    display: block;
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+    background-color: yellow;
+    opacity: 0.5;
+    margin: 35% auto;
+    /* box-sizing: border-box; */
+}
+
+.pill {
+    background-image: url(../assets/cherries.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 7px;
+}
+
+.pacMan::before {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background-color: yellow;
+    opacity: 0.7;
+    margin: 4% auto;
+    /* box-sizing: border-box; */
+}
+
+.blinky {
+    background-image: url(../assets/blinky.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.pinky {
+    background-image: url(../assets/pinky.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.inky {
+    background-image: url(../assets/inky.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.clyde {
+    background-image: url(../assets/clyde.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.scaredGhost {
+    background-image: url(../assets/scaredGhost.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.ghostHouse {
+    background-color: rgb(49, 48, 48);
+}
+
+.pacHouse {
+    background-color: rgba(175, 113, 175, 0.479);
+}
+
+.gameOver {
+    background-color: darkgrey;
+    color: purple;
+    position: fixed;
+    top: 1;
+    left: 1;
+    right: 1;
+    bottom: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25vmin;
+    /* margin-top:3vmin; */
+    width: 600px;
+    font-size: 50px;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.2s ease-in;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .gameOver > P {
+    font-size: 10vmin;
+    animation: blink 1s linear infinite;
+  }
+  
+  .gameOver.open {
+    opacity: 0.8;
+    z-index: 999999;
+  }
+
+  @keyframes blink {
+    50% {
+        opacity: 0;
+    } 
+    80% {
+        opacity: .5;
+    }
+  }
+
+  .winner {
+    background-color: darkgrey;
+    color: purple;
+    position: fixed;
+    top: 1;
+    left: 1;
+    right: 1;
+    bottom: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30vmin;
+    width: 600px;
+    font-size: 300px;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.2s ease-in;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .winner > P {
+    font-size: 10vmin;
+    animation: blink 1s linear infinite;
+  }
+  
+  .winner.open {
+    opacity: 0.8;
+    z-index: 999999;
+  }

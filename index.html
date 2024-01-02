@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <title>PACMAN</title>
+  </head>
+  <body>
+    <div class="mainContainer">
+        <div class="gameGrid">
+            <div class = "gameOver">
+                <p>GAME OVER</p>
+              </div>
+              <div class = "winner">
+                <p>YOU WIN!</p>
+              </div>
+        </div>
+      <aside>
+        <header>
+          <h1>PAC-MAN</h1>
+        </header>
+        <div class="scores">
+          <h2 id="currentScore">Score</h2>
+          <p id="currScoreSpan">0</p>
+          <!-- <h2 id="highScore">HighScore</h2> -->
+          <!-- <p id="highScoreSpan">0</p> -->
+        </div>
+        <button id="resetBTN">NewGame</button>
+      </aside>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
